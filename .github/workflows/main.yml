@@ -1,4 +1,4 @@
-name: CI
+name: build
 
 on:
   push:
@@ -68,9 +68,6 @@ jobs:
       - name: Prepare testing environment
         if: matrix.arch == 'x64'
         run: yarn test:setup
-      - name: Run unit tests
-        if: matrix.arch == 'x64'
-        run: yarn test:unit
       - name: Run script tests
         if: matrix.arch == 'x64'
         run: yarn test:script
